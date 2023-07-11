@@ -1,0 +1,44 @@
+﻿@model PrijavaQR.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login page";
+}
+@using (Html.BeginForm())
+{
+    <div class="text-left">
+        <h1 class="display-4">Login</h1>
+
+    </div>
+
+
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "form-label" })
+        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { Value = Model.Email, @class = "form-control", id = "title", name = "key", @data_provide = "typeahead", autocomplete = "off" } })
+        <div class="invalid-feedback">
+            Please enter email in the textarea.
+        </div>
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "form-label" })
+        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { Value = Model.Password, @class = "form-control", id = "title", name = "key", @data_provide = "typeahead", autocomplete = "off" } })
+
+        <div class="invalid-feedback">
+            Please password in the textarea.
+        </div>
+    </div>
+
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-success me-md-3" id="loginButton" type="submit">Login</button>
+        <button class="btn btn-danger" id="cancelButton" type="button">Cancel</button>
+    </div>
+
+}
+
+<script>
+    document.getElementById("cancelButton").addEventListener("click", function () {
+        window.location.href = 'https://localhost:7011'; });
+
+</script>

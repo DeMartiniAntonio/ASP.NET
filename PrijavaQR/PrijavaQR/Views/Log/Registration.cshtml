@@ -1,0 +1,80 @@
+﻿@model PrijavaQR.Models.RegistrationViewModel
+
+@{
+    ViewData["Title"] = "Registration page";
+}
+
+<div class="text-left">
+    <h1 class="display-4">Registration</h1>
+    
+</div>
+
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"> Name and surname</label>
+    <input type="text" class="form-control" id="nameInput" placeholder="Ivo Ivić" value="@Model.Name" required>
+    <div class="invalid-feedback">
+        Please enter name and surename in the textarea.
+    </div>
+</div>
+
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" value="@Model.Email" required>
+    <div class="invalid-feedback">
+        Please enter email in the textarea.
+    </div>
+</div>
+
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="passwordInput" value="@Model.Password" required>
+    <div class="invalid-feedback">
+        Please password in the textarea.
+    </div>
+</div>
+
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Confirm password</label>
+    <input type="password" class="form-control" id="confirmPasswordInput" value="@Model.ConfirmPassword" required>
+    <div class="invalid-feedback">
+        Please enter password in the textarea.
+    </div>
+</div>
+
+<div class="mb-3">
+    <div class="row">
+        <div class="col-2">
+            <label for="oibCheckbox" class="form-label">R1</label>
+            <input type="checkbox" id="oibCheckbox" onchange="toggleOibInput()">
+        </div>
+        <div class="col-10">
+            <label for="oibInput" class="form-label">OIB</label>
+            <input type="number" class="form-control" id="oibInput" disabled>
+        </div>
+    </div>
+</div>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-success me-md-3" id="saveButton" type="button">Registration</button>
+    <button class="btn btn-danger" id="cancelButton" type="button">Cancel</button>
+</div>
+
+
+
+<script>
+    function toggleOibInput() {
+        var oibCheckbox = document.getElementById("oibCheckbox");
+        var oibInput = document.getElementById("oibInput");
+
+        if (oibCheckbox.checked) {
+            oibInput.disabled = false;
+        } else {
+            oibInput.disabled = true;
+        }
+    }
+
+    document.getElementById("cancelButton").addEventListener("click", function () {
+        window.location.href = 'https://localhost:7011'; });
+
+
+</script>
