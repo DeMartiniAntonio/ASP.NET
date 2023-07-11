@@ -19,6 +19,8 @@ namespace PrijavaQR.Controllers
             return View(model);
         }
 
+
+
         public IActionResult Login()
         {
             var model = new LoginViewModel();
@@ -33,9 +35,10 @@ namespace PrijavaQR.Controllers
             
             if (loginM.Email == "test@gmail.com" && loginM.Password == "test")
             {
-                return RedirectToAction("Home", "Home");
+                return RedirectToAction("HomeScr", "");
             }
-            else {
+            else 
+            {
                 return View(model);
             }
 
