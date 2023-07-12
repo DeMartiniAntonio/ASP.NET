@@ -25,8 +25,9 @@ namespace PrijavaQR.Controllers
 
         public IActionResult HomeScr()
         {
-            return View();
+            var model = new DataTableViewModel();
 
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

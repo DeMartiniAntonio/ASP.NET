@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Informatika_PC\\Documents\\gitProjekt\\PrijavaQR\\PrijavaQR\\PrijavaQR.csproj",
+      "projectUniqueName": "C:\\Users\\Informatika_PC\\Documents\\GitHub\\praksa\\PrijavaQR\\PrijavaQR\\PrijavaQR.csproj",
       "projectName": "PrijavaQR",
-      "projectPath": "C:\\Users\\Informatika_PC\\Documents\\gitProjekt\\PrijavaQR\\PrijavaQR\\PrijavaQR.csproj",
+      "projectPath": "C:\\Users\\Informatika_PC\\Documents\\GitHub\\praksa\\PrijavaQR\\PrijavaQR\\PrijavaQR.csproj",
       "packagesPath": "C:\\Users\\Informatika_PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Informatika_PC\\Documents\\gitProjekt\\PrijavaQR\\PrijavaQR\\obj\\",
+      "outputPath": "C:\\Users\\Informatika_PC\\Documents\\GitHub\\praksa\\PrijavaQR\\PrijavaQR\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Informatika_PC\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,48 +1,107 @@
-﻿@{
+﻿@model PrijavaQR.Models.DataTableViewModel
+
+@{
     ViewData["Title"] = "Tablica";
 }
 <h1>@ViewData["Title"]</h1>
 
-<table class="table table table-hover table-striped">
-    <thead class="table-dark">
-        <tr>
-            <th scope="col">Broj dokumenta</th>
-            <th scope="col">Datum</th>
-            <th scope="col">Partner</th>
-            <th scope="col">Iznos</th>
-            <th scope="col">Status</th>
-            <th scope="col">Dospijeće</th>
-            <th scope="col">Plaćanje</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>19.04.2020</td>
-            <td>Git</td>
-            <td>1200</td>
-            <td>U tijeku</td>
-            <td>20.05.2021</td>
-            <td>Kartično</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>19.04.2020</td>
-            <td>Git</td>
-            <td>1200</td>
-            <td>U tijeku</td>
-            <td>20.05.2021</td>
-            <td>Kartično</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>19.04.2020</td>
-            <td>Git</td>
-            <td>1200</td>
-            <td>U tijeku</td>
-            <td>20.05.2021</td>
-            <td>Kartično</td>
-        </tr>
+<div class="table-responsive">
+    
+    
+    <div class="documentInfo">
+        <div class="col-2">
+            <label class="form-label">Broj dokumenta:</label>
+            <label class="form-label" id="documentId"></label>
+        </div>
+        <div class="col-2">
+            <label class ="form-label">Status:</label>
+            <label class="form-label dropdown-toggle" id="statusDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            </label>
+            <ul class="dropdown-menu" aria-labelledby="statusDropdown">
+               <li><a class="dropdown-item" href="#" onclick="changeStatus('@Model.StatusList[0]')">@Model.StatusList[0]</a></li>
+               <li><a class="dropdown-item" href="#" onclick="changeStatus('@Model.StatusList[1]')">@Model.StatusList[1]</a></li>
+                <li><a class="dropdown-item" href="#" onclick="changeStatus('@Model.StatusList[2]')">@Model.StatusList[2]</a></li>
+            </ul>
+        </div>
+    </div>
 
-    </tbody>
-</table>
+    <table class="table table-hover table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Datum</th>
+                <th scope="col">Partner</th>
+                <th scope="col">Iznos</th>
+                <th scope="col">Status</th>
+                <th scope="col">Dospijeće</th>
+                <th scope="col">Plaćanje</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="row-data">
+                <th scope="row">1</th>
+                <td>19.04.2020</td>
+                <td>Git</td>
+                <td>1200</td>
+                <td>U tijeku</td>
+                <td>20.05.2021</td>
+                <td>Kartično</td>
+            </tr>
+            <tr class ="row-data">
+                <th scope="row">2</th>
+                <td>19.04.2020</td>
+                <td>Git</td>
+                <td>1200</td>
+                <td>Nije plačeno</td>
+                <td>20.05.2021</td>
+                <td>Kartično</td>
+            </tr>
+            <tr class="row-data">
+                <th scope="row">3</th>
+                <td>19.04.2020</td>
+                <td>Git</td>
+                <td>1200</td>
+                <td>Plačeno</td>
+                <td>20.05.2021</td>
+                <td>Kartično</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.row-data').on('dblclick', function () {
+            $('.row-data').removeClass('selected');
+
+            $(this).addClass('selected');
+            var idDoc = $(this).find('th').text();
+            var status = $(this).find('td:eq(3)').text();
+
+            $('#statusDropdown').text(status);
+            $('#documentId').text(idDoc);
+            
+        });
+    });
+
+    function changeStatus(newText) {
+        var label = document.getElementById("statusDropdown");
+        label.innerText = newText; 
+        
+        var selectedRow = $('.row-data.selected');
+        var statusColumn = selectedRow.find('td:eq(3)'); // Assuming the status column is the fifth column (index 4)
+
+        statusColumn.text(newText);
+    }
+
+
+</script>
+
+<style>
+    .selected {
+        background-color: #e9a825;
+    }
+</style>
+
+
