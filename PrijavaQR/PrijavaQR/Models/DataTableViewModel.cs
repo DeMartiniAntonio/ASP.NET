@@ -4,6 +4,6 @@
     {
         public int idStatus { get; set; }
 
-        public List<string> StatusList { get; set; } = new List<string> { "Nije plačeno", "U tijeku", "Plačeno" };
+        public List<string> StatusList { get; set; } = new List<string> { "Nije plaćeno", "U tijeku", "Plaćeno" };
     }
 }

@@ -9,19 +9,21 @@
     
     
     <div class="documentInfo">
-        <div class="col-2">
-            <label class="form-label">Broj dokumenta:</label>
-            <label class="form-label" id="documentId"></label>
-        </div>
-        <div class="col-2">
-            <label class ="form-label">Status:</label>
-            <label class="form-label dropdown-toggle" id="statusDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            </label>
+        <div class="row">
+            <div class="col-3">
+                <label class="form-label">Broj dokumenta:</label>
+                <label class="form-label" id="documentId"></label>
+            </div>
+            <div class="col-3">
+                <label class ="form-label">Status:</label>
+                <label class="form-label dropdown-toggle" id="statusDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                </label>
             <ul class="dropdown-menu" aria-labelledby="statusDropdown">
                <li><a class="dropdown-item" href="#" onclick="changeStatus('@Model.StatusList[0]')">@Model.StatusList[0]</a></li>
                <li><a class="dropdown-item" href="#" onclick="changeStatus('@Model.StatusList[1]')">@Model.StatusList[1]</a></li>
                 <li><a class="dropdown-item" href="#" onclick="changeStatus('@Model.StatusList[2]')">@Model.StatusList[2]</a></li>
             </ul>
+        </div>
         </div>
     </div>
 
@@ -40,11 +42,11 @@
         <tbody>
             <tr class="row-data">
                 <th scope="row">1</th>
-                <td>19.04.2020</td>
+                <td>09.05.2020</td>
                 <td>Git</td>
                 <td>1200</td>
                 <td>U tijeku</td>
-                <td>20.05.2021</td>
+                <td>26.03.2021</td>
                 <td>Kartično</td>
             </tr>
             <tr class ="row-data">
@@ -58,11 +60,11 @@
             </tr>
             <tr class="row-data">
                 <th scope="row">3</th>
-                <td>19.04.2020</td>
+                <td>01.08.2020</td>
                 <td>Git</td>
-                <td>1200</td>
+                <td>1800</td>
                 <td>Plačeno</td>
-                <td>20.05.2021</td>
+                <td>11.02.2021</td>
                 <td>Kartično</td>
             </tr>
         </tbody>
@@ -90,7 +92,7 @@
         label.innerText = newText; 
         
         var selectedRow = $('.row-data.selected');
-        var statusColumn = selectedRow.find('td:eq(3)'); // Assuming the status column is the fifth column (index 4)
+        var statusColumn = selectedRow.find('td:eq(3)'); 
 
         statusColumn.text(newText);
     }

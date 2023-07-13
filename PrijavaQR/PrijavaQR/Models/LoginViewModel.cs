@@ -9,6 +9,5 @@ namespace PrijavaQR.Models
         public string? Password { get; set; }
 
 
-
     }
 }
