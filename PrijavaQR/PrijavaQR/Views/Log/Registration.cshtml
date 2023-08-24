@@ -1,80 +1,126 @@
 ﻿@model PrijavaQR.Models.RegistrationViewModel
 
-@{
-    ViewData["Title"] = "Registration page";
-}
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="text-left">
-    <h1 class="display-4">Registration</h1>
-    
-</div>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"> Name and surname</label>
-    <input type="text" class="form-control" id="nameInput" placeholder="Ivo Ivić" value="@Model.Name" required>
-    <div class="invalid-feedback">
-        Please enter name and surename in the textarea.
-    </div>
-</div>
+        <title>Register</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
 
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" value="@Model.Email" required>
-    <div class="invalid-feedback">
-        Please enter email in the textarea.
-    </div>
-</div>
+        <!-- Favicons -->
+        <link href="~/img/git-300x200.png" rel="icon">
 
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="passwordInput" value="@Model.Password" required>
-    <div class="invalid-feedback">
-        Please password in the textarea.
-    </div>
-</div>
+        <!-- Google Fonts -->
+        <link href="https://fonts.gstatic.com" rel="preconnect">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Confirm password</label>
-    <input type="password" class="form-control" id="confirmPasswordInput" value="@Model.ConfirmPassword" required>
-    <div class="invalid-feedback">
-        Please enter password in the textarea.
-    </div>
-</div>
+        <!-- Vendor CSS Files -->
+        <link href="~/lib/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="~/lib/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="~/lib/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+        <link href="~/lib/vendor/quill/quill.snow.css" rel="stylesheet">
+        <link href="~/lib/vendor/quill/quill.bubble.css" rel="stylesheet">
+        <link href="~/lib/vendor/remixicon/remixicon.css" rel="stylesheet">
+        <link href="~/lib/vendor/simple-datatables/style.css" rel="stylesheet">
 
-<div class="mb-3">
-    <div class="row">
-        <div class="col-2">
-            <label for="oibCheckbox" class="form-label">R1</label>
-            <input type="checkbox" id="oibCheckbox" onchange="toggleOibInput()">
+        <!-- Template Main CSS File -->
+        <link href="~/css/style.css" rel="stylesheet">
+
+    </head>
+
+<body>
+
+  <main>
+    <div class="container">
+
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+              
+
+              <div class="card mb-3">
+
+                <div class="card-body">
+
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
+                    <p class="text-center small">Enter your personal details to create account</p>
+                  </div>
+
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-12">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "form-label",})
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { Value = Model.Name, @class = "form-control", id = "title", name = "key", @data_provide = "typeahead", autocomplete = "off" } })
+                      <div class="invalid-feedback">Please, enter your name!</div>
+                    </div>
+
+                    <div class="col-12">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "form-label",})
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { Value = Model.Email, @class = "form-control", id = "title", name = "key", @data_provide = "typeahead", autocomplete = "off" } })
+                      <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                    </div>
+
+                    <div class="col-12">
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "form-label",})
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { Value = Model.Password, @class = "form-control", id = "title", name = "key", @data_provide = "typeahead", autocomplete = "off" } })
+                    </div>
+
+                    <div class="col-12">
+                           @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "form-label",})
+                            @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { Value = Model.ConfirmPassword, @class = "form-control", id = "title", name = "key", @data_provide = "typeahead", autocomplete = "off" } })
+                      <div class="invalid-feedback">Please enter your password!</div>
+                    </div>
+
+
+
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
+                        <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
+                        <div class="invalid-feedback">You must agree before submitting.</div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" type="submit">Create Account</button>
+                    </div>
+                    <div class="col-12">
+                    <p class="small mb-0">Already have an account? <a href="Login">Log in</a></p>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+
+            
+            </div>
+          </div>
         </div>
-        <div class="col-10">
-            <label for="oibInput" class="form-label">OIB</label>
-            <input type="number" class="form-control" id="oibInput" disabled>
-        </div>
+
+      </section>
+
     </div>
-</div>
+  </main><!-- End #main -->
 
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button class="btn btn-success me-md-3" id="saveButton" type="button">Registration</button>
-    <button class="btn btn-danger" id="cancelButton" type="button">Cancel</button>
-</div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- Vendor JS Files -->
+    <script src="~/lib/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="~/lib/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/vendor/chart.js/chart.umd.js"></script>
+    <script src="~/lib/vendor/echarts/echarts.min.js"></script>
+    <script src="~/lib/vendor/quill/quill.min.js"></script>
+    <script src="~/lib/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="~/lib/vendor/tinymce/tinymce.min.js"></script>
+    <script src="~/lib/vendor/php-email-form/validate.js"></script>
 
+  <!-- Template Main JS File -->
+    <script src="~/js/main.js"></script>
 
-<script>
-    function toggleOibInput() {
-        var oibCheckbox = document.getElementById("oibCheckbox");
-        var oibInput = document.getElementById("oibInput");
-
-        if (oibCheckbox.checked) {
-            oibInput.disabled = false;
-        } else {
-            oibInput.disabled = true;
-        }
-    }
-
-    document.getElementById("cancelButton").addEventListener("click", function () {
-        window.location.href = 'https://localhost:7011'; });
-
-
-</script>
+</body>
+</html>

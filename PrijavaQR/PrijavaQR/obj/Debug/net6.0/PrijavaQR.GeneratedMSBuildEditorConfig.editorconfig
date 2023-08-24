@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Antonio\source\repos\DeMartiniAntonio\praksa\PrijavaQR\PrijavaQR
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Antonio/source/repos/DeMartiniAntonio/praksa/PrijavaQR/PrijavaQR/Files/MailTemplates/welcome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = RmlsZXNcTWFpbFRlbXBsYXRlc1x3ZWxjb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Antonio/source/repos/DeMartiniAntonio/praksa/PrijavaQR/PrijavaQR/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Antonio/source/repos/DeMartiniAntonio/praksa/PrijavaQR/PrijavaQR/Views/Home/HomeScr.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lU2NyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -26,6 +34,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Antonio/source/repos/DeMartiniAntonio/praksa/PrijavaQR/PrijavaQR/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Antonio/source/repos/DeMartiniAntonio/praksa/PrijavaQR/PrijavaQR/Views/Home/Profil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9maWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Antonio/source/repos/DeMartiniAntonio/praksa/PrijavaQR/PrijavaQR/Views/Log/Login.cshtml]
